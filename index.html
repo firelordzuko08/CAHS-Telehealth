@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Agapay Telehealth</title>
+  <meta name="description"
+    content="Plain-language health information and telehealth guidance for older adults and their families.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- SVG Icon Sprite (Lucide-style line icons) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-clipboard" viewBox="0 0 24 24">
+        <rect x="8" y="2" width="8" height="4" rx="1" />
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M9 12h6M9 16h4" />
+      </symbol>
+      <symbol id="i-video" viewBox="0 0 24 24">
+        <rect x="2" y="6" width="14" height="12" rx="2" />
+        <path d="M16 10l6-3v10l-6-3z" />
+      </symbol>
+      <symbol id="i-pill" viewBox="0 0 24 24">
+        <path d="M10.5 20.5a5 5 0 0 1-7-7l10-10a5 5 0 0 1 7 7z" />
+        <path d="M8.5 8.5l7 7" />
+      </symbol>
+      <symbol id="i-sprout" viewBox="0 0 24 24">
+        <path d="M12 22V12" />
+        <path d="M12 12C12 7 8 5 3 5c0 4 2 7 9 7z" />
+        <path d="M12 15c0-4 3-6 9-6 0 4-3 6-9 6z" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" />
+        <path d="M9 12l2 2 4-4" />
+      </symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24">
+        <path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z" />
+      </symbol>
+      <symbol id="i-utensils" viewBox="0 0 24 24">
+        <path d="M5 3v7a2 2 0 0 0 2 2v9M9 3v7a2 2 0 0 1-2 2M7 3v7M17 3c-2 2-3 5-3 8h3v10" />
+      </symbol>
+      <symbol id="i-activity" viewBox="0 0 24 24">
+        <path d="M3 12h4l3-8 4 16 3-8h4" />
+      </symbol>
+      <symbol id="i-drop" viewBox="0 0 24 24">
+        <path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z" />
+      </symbol>
+      <symbol id="i-smile" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M8 14a4.5 4.5 0 0 0 8 0M9 9.5h.01M15 9.5h.01" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="M3 7l9 6 9-6" />
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z" />
+        <circle cx="12" cy="10" r="2.5" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M8 12l3 3 5-6" />
+      </symbol>
+      <symbol id="i-home" viewBox="0 0 24 24">
+        <path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10" />
+      </symbol>
+      <symbol id="i-book" viewBox="0 0 24 24">
+        <path d="M4 4h6a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-6a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h7z" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" />
+      </symbol>
+      <symbol id="i-contrast" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3v18a9 9 0 0 0 0-18z" fill="currentColor" />
+      </symbol>
+      <symbol id="i-up" viewBox="0 0 24 24">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </symbol>
+      <symbol id="i-speaker" viewBox="0 0 24 24">
+        <path d="M4 9v6h4l5 4V5L8 9zM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" />
+      </symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24">
+        <path d="M12 3l10 18H2zM12 10v5M12 18h.01" />
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <circle cx="9" cy="8" r="3.5" />
+        <path d="M2 20c0-4 3-6 7-6s7 2 7 6M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.5.6 4 2.4 4 6" />
+      </symbol>
+      <symbol id="i-target" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="5" />
+        <circle cx="12" cy="12" r="1" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#home">Skip to main content</a>
+
+  <!-- Top Navigation & Accessibility Controls -->
+  <header>
+    <div class="bar">
+      <a class="logo" href="#home" aria-label="Agapay Telehealth home">
+        <span class="logo-mark"><img src="logo.png" alt="" width="40" height="40"></span>
+        <span>Agapay <small style="font-weight:400">Telehealth</small></span>
+      </a>
+
+      <div class="tools" role="group" aria-label="Display settings">
+        <div class="sz" role="group" aria-label="Text size">
+          <span>Text:</span>
+          <button id="fMinus" type="button" aria-label="Smaller text">A−</button>
+          <button id="fReset" type="button" aria-label="Reset text size">A</button>
+          <button id="fPlus" type="button" aria-label="Larger text">A+</button>
+        </div>
+        <button id="themeBtn" type="button" aria-pressed="false">
+          <svg class="ic" aria-hidden="true">
+            <use href="#i-moon" />
+          </svg>
+          <span>Dark</span>
+        </button>
+        <button id="contrastBtn" type="button" aria-pressed="false">
+          <svg class="ic" aria-hidden="true">
+            <use href="#i-contrast" />
+          </svg>
+          <span>Contrast</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navList">
+          <svg class="ic" aria-hidden="true">
+            <use href="#i-menu" />
+          </svg> Menu
+        </button>
+      </div>
+
+      <nav aria-label="Main">
+        <ul id="navList">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Health Services</a></li>
+          <li><a href="#education">Health Education</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#privacy">Privacy Notice</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-copy">
+          <p class="tag"><em>Alagang may puso, kalusugang abot-kamay!</em></p>
+          <h1 id="hero-title">Welcome to Agapay Telehealth</h1>
+          <p class="lead">We help older adults and their families find clear, trustworthy health information and learn
+            how online healthcare works, from the comfort of home. No technical skills needed: just read, tap and learn
+            at your own pace.</p>
+          <div class="btn-group">
+            <a class="btn" href="#services">Explore Health Services</a>
+            <a class="btn light" href="#contact">Contact Us</a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <img src="telehealth.jpg" width="1200" height="800" fetchpriority="high"
+            alt="Two healthcare workers during a telehealth session: one raises her hand toward a video screen showing a colleague doing the same, while a vitals monitor sits behind them">
+        </div>
+      </div>
+
+      <div class="wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+          <path d="M0 30C240 70 480 0 720 25s480 40 720 5V60H0z" />
+        </svg>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Key health statistics">
+      <div class="wrap">
+        <div class="stat-grid">
+          <div class="stat reveal">
+            <b data-count="33" data-suffix="%">1 in 3</b>
+            <span>Filipino adults live with hypertension (about one in three)</span>
+          </div>
+          <div class="stat reveal">
+            <b data-count="44" data-suffix="%">44%</b>
+            <span>of adults with hypertension worldwide don’t know they have it</span>
+          </div>
+          <div class="stat reveal">
+            <b data-count="14" data-suffix="%">14%</b>
+            <span>of adults aged 70+ live with a mental disorder</span>
+          </div>
+          <div class="stat reveal">
+            <b>1 in 4</b>
+            <span>older people falls each year, but fewer than half tell their doctor</span>
+          </div>
+        </div>
+        <p class="src">Sources: World Health Organization (2025); National Center for Injury Prevention and Control
+          (2026). Full references are listed under Health Education.</p>
+      </div>
+    </section>
+
+    <section class="alt" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <span class="eyebrow">How it works</span>
+          <h2 id="how-title">Four simple steps to an online check-up</h2>
+          <p>Our guides walk you through each step, so you always know what to expect.</p>
+        </header>
+
+        <div class="steps">
+          <article class="step reveal">
+            <div class="icon-badge"><svg class="ic" aria-hidden="true">
+                <use href="#i-clipboard" />
+              </svg></div>
+            <h3>Choose</h3>
+            <p>Pick the information or service topic you need.</p>
+          </article>
+          <article class="step reveal">
+            <div class="icon-badge"><svg class="ic" aria-hidden="true">
+                <use href="#i-pill" />
+              </svg></div>
+            <h3>Prepare</h3>
+            <p>Gather your medicine list and write down your questions.</p>
+          </article>
+          <article class="step reveal">
+            <div class="icon-badge"><svg class="ic" aria-hidden="true">
+                <use href="#i-video" />
+              </svg></div>
+            <h3>Join the call</h3>
+            <p>Find a quiet, well-lit place and check your device and connection.</p>
+          </article>
+          <article class="step reveal">
+            <div class="icon-badge"><svg class="ic" aria-hidden="true">
+                <use href="#i-check" />
+              </svg></div>
+            <h3>Follow up</h3>
+            <p>Note your doctor’s advice and share it with family or caregivers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <span class="eyebrow">About us</span>
+          <h2 id="about-title">Care that is easy to understand</h2>
+        </header>
+
+        <div class="split reveal">
+          <div>
+            <div class="mission-block">
+              <h3><svg class="ic" aria-hidden="true">
+                  <use href="#i-target" />
+                </svg> Our Mission</h3>
+              <p>To provide accessible, reliable, and understandable health information and telehealth support for
+                senior citizens, helping them make informed decisions about their health and well-being.</p>
+            </div>
+            <div class="mission-block" style="margin-top:var(--s3)">
+              <h3><svg class="ic" aria-hidden="true">
+                  <use href="#i-sprout" />
+                </svg> Our Vision</h3>
+              <p>To create a community where every older adult can access quality health information and digital
+                healthcare support regardless of age or technological experience.</p>
+            </div>
+          </div>
+          <div class="split-art photo">
+            <img src="/CAHS TIGERS.jpg" width="480" height="315" loading="lazy"
+              alt="A smiling team of doctors and nurses in scrubs and white coats">
+          </div>
+        </div>
+
+        <div class="split rev reveal">
+          <div>
+            <h3>Who We Serve</h3>
+            <ul class="checks">
+              <li><svg class="ic" aria-hidden="true">
+                  <use href="#i-check" />
+                </svg><span>Senior citizens aged 60 and above expanded Senior Citizens Act of 2010 (Republic Act No. 9994)</span></li>
+              <li><svg class="ic" aria-hidden="true">
+                  <use href="#i-check" />
+                </svg><span>Older adults who need accessible healthcare information</span></li>
+              <li><svg class="ic" aria-hidden="true">
+                  <use href="#i-check" />
+                </svg><span>Elderly individuals who find it hard to reach traditional healthcare services</span></li>
+              <li><svg class="ic" aria-hidden="true">
+                  <use href="#i-check" />
+                </svg><span>Family members and caregivers who assist older adults</span></li>
+            </ul>
+          </div>
+          <div class="split-art photo">
+            <img src="seniors.jpg" width="1080" height="567" loading="lazy"
+              alt="An older adult and a family member using a tablet for a video call with a healthcare provider">
+          </div>
+        </div>
+
+        <article class="card reveal" style="background:var(--success-bg)">
+          <h3>How This Website Helps</h3>
+          <p>Large text, simple menus and short articles make health topics easy to read. Use the text size, dark mode
+            and high contrast buttons at the top at any time; your choices are remembered. Information is written in
+            plain language, so you can understand your health better, prepare questions for your doctor, and know what
+            to expect from an online consultation. Caregivers can read along or share pages with the person they
+            support.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. HEALTH SERVICES -->
+    <section class="alt" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <span class="eyebrow">Services</span>
+          <h2 id="services-title">Health Services and Information</h2>
+        </header>
+
+
+        <div class="grid">
+          <div class="reveal">
+            <button class="card svc" type="button" aria-expanded="false">
+              <div>
+                <div class="icon-badge"><svg class="ic" aria-hidden="true">
+                    <use href="#i-clipboard" />
+                  </svg></div>
+                <h3>General Health Information</h3>
+                <p>This service offers plain-language information about common health conditions and the normal changes
+                  that come with ageing. It is intended to help older adults and caregivers understand their health and
+                  prepare questions for their doctor.</p>
+                <p class="more">Topics covered- common conditions in older age, understanding test results and terms,
+                  preparing questions for a doctor’s visit, where to find reliable sources.</p>
+              </div>
+              <small>Select to show topics covered</small>
+            </button>
+          </div>
+
+          <div class="reveal">
+            <button class="card svc" type="button" aria-expanded="false">
+              <div>
+                <div class="icon-badge"><svg class="ic" aria-hidden="true">
+                    <use href="#i-video" />
+                  </svg></div>
+                <h3>Online Health Consultation Information</h3>
+                <p>This service explains how video and telephone consultations with a doctor work. It describes what to
+                  prepare, what to expect during the visit, and how a family member or caregiver can help (Health
+                  Resources and Services Administration [HRSA], 2024, 2025).</p>
+                <p class="more">Topics covered- choosing a quiet, well-lit space, checking your device and internet
+                  connection, keeping your medicine list and questions ready, knowing when an in-person visit is needed.
+                </p>
+              </div>
+              <small>Select to show topics covered</small>
+            </button>
+          </div>
+
+          <div class="reveal">
+            <button class="card svc" type="button" aria-expanded="false">
+              <div>
+                <div class="icon-badge"><svg class="ic" aria-hidden="true">
+                    <use href="#i-pill" />
+                  </svg></div>
+                <h3>Medication Safety Awareness</h3>
+                <p>This service provides guidance on taking medicines correctly and safely, including organizing
+                  medicines, avoiding mix-ups and speaking with a pharmacist or doctor about concerns (National
+                  Institute on Aging [NIA], 2022).</p>
+                <p class="more">Topics covered- keeping an up-to-date medicine list, using pill organizers and
+                  reminders, avoiding sharing medicines, asking about interactions and side effects, safe storage.</p>
+              </div>
+              <small>Select to show topics covered</small>
+            </button>
+          </div>
+
+          <div class="reveal">
+            <button class="card svc" type="button" aria-expanded="false">
+              <div>
+                <div class="icon-badge"><svg class="ic" aria-hidden="true">
+                    <use href="#i-sprout" />
+                  </svg></div>
+                <h3>Healthy Aging Tips</h3>
+                <p>This service shares everyday habits that support independence, comfort and quality of life in later
+                  years, written for older adults and their families.</p>
+                <p class="more">Topics covered- sleep and daily routine, staying socially and mentally active, vision,
+                  hearing and dental care, planning ahead with family and caregivers.</p>
+              </div>
+              <small>Select to show topics covered</small>
+            </button>
+          </div>
+
+          <div class="reveal">
+            <button class="card svc" type="button" aria-expanded="false">
+              <div>
+                <div class="icon-badge"><svg class="ic" aria-hidden="true">
+                    <use href="#i-shield" />
+                  </svg></div>
+                <h3>Preventive Healthcare</h3>
+                <p>This service explains the checkups, screenings and vaccinations that help detect or prevent illness
+                  early, and encourages older adults to discuss a personal prevention plan with their doctor.</p>
+                <p class="more">Topics covered- routine checkups and blood pressure checks, screening tests, vaccines
+                  such as influenza and pneumonia, keeping a personal health record.</p>
+              </div>
+              <small>Select to show topics covered</small>
+            </button>
+          </div>
+
+          <div class="reveal">
+            <button class="card svc" type="button" aria-expanded="false">
+              <div>
+                <div class="icon-badge"><svg class="ic" aria-hidden="true">
+                    <use href="#i-smile" />
+                  </svg></div>
+                <h3>Mental Health and Emotional Wellness</h3>
+                <p>This service offers information on emotional well-being in later life, including loneliness, low
+                  mood, anxiety and memory concerns. Loneliness and social isolation are key risk factors for mental
+                  health conditions in later life (World Health Organization [WHO], 2025).</p>
+                <p class="more">Topics covered- staying socially connected, recognizing signs of depression and anxiety,
+                  coping with loss and stress, when and how to seek professional support.</p>
+              </div>
+              <small>Select to show topics covered</small>
+            </button>
+          </div>
+
+          <div class="reveal">
+            <button class="card svc" type="button" aria-expanded="false">
+              <div>
+                <div class="icon-badge"><svg class="ic" aria-hidden="true">
+                    <use href="#i-utensils" />
+                  </svg></div>
+                <h3>Nutrition and Healthy Eating</h3>
+                <p>This service presents practical information on balanced, affordable meals for older adults. A healthy
+                  diet is built on minimally processed foods that are low in unhealthy fats, free sugars and sodium
+                  (WHO, 2026).</p>
+                <p class="more">Topics covered- planning balanced meals, choosing drinks wisely, reducing salt and
+                  sugar, eating well with a small appetite or chewing difficulty (ask a doctor or dietitian).</p>
+              </div>
+              <small>Select to show topics covered</small>
+            </button>
+          </div>
+
+          <div class="reveal">
+            <button class="card svc" type="button" aria-expanded="false">
+              <div>
+                <div class="icon-badge"><svg class="ic" aria-hidden="true">
+                    <use href="#i-activity" />
+                  </svg></div>
+                <h3>Exercise and Physical Activity</h3>
+                <p>This service describes safe, gentle physical activity for older adults to maintain strength, balance
+                  and mobility. Older adults are advised to do activities that build balance and strength on 3 or more
+                  days a week (WHO, 2024).</p>
+                <p class="more">Topics covered- walking and stretching, chair exercises, balance and strength
+                  activities, starting slowly and checking with a doctor first.</p>
+              </div>
+              <small>Select to show topics covered</small>
+            </button> 
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. HEALTH EDUCATION & REFERENCES -->
+    <section id="education" aria-labelledby="education-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <span class="eyebrow">Learn</span>
+          <h2 id="education-title">Health Education</h2>
+          <p>Short, easy-to-read articles. Tap “Read More” to open each one.</p>
+        </header>
+
+        <div class="grid">
+          <article class="card art reveal">
+            <div class="img">
+              <img src="bloodpressure.jpg"
+                alt="A health worker measuring an older adult’s blood pressure with a cuff and gauge"
+                style="object-position:50% 45%" loading="lazy">
+            </div>
+            <h3>Understanding High Blood Pressure</h3>
+            <p>High blood pressure (hypertension) usually has no signs or symptoms, so measuring your blood pressure is
+              the only way to know if you have it (National Center for Chronic Disease Prevention and Health Promotion
+              [NCCDPHP], 2026).</p>
+            <button class="btn rm" type="button" aria-expanded="false">Read More</button>
+            <div class="meter" aria-hidden="true"><i></i></div>
+            <div class="full">
+              <button class="btn light listen" type="button">
+                <svg class="ic" aria-hidden="true">
+                  <use href="#i-speaker" />
+                </svg> Listen
+              </button>
+              <h4>What is it?</h4>
+              <p>Hypertension means blood pressure stays too high. It can harm the heart, brain and kidneys (NCCDPHP,
+                2026), and it can burst or block arteries that supply the brain, causing a stroke (WHO, 2025).</p>
+              <h4>Why monitor it?</h4>
+              <ul>
+                <li>An estimated 44% of adults with hypertension worldwide do not know they have it (WHO, 2025).</li>
+                <li>In the Philippines, hypertension affects about one in three adults (WHO, 2025).</li>
+                <li>Risk factors include a diet high in sodium, too little physical activity, too much alcohol, tobacco
+                  use, diabetes and overweight (NCCDPHP, 2026).</li>
+                <li>Regular checks at home or a health center help find it early. Share your readings with your doctor.
+                </li>
+              </ul>
+              <h4>Heart-healthy habits</h4>
+              <ul>
+                <li>Many people can lower their blood pressure with lifestyle changes: regular physical activity, not
+                  smoking, limiting salt and alcohol, keeping a healthy weight and managing stress (NCCDPHP, 2026).</li>
+                <li>Many people also need medicine (WHO, 2025; NCCDPHP, 2026). Take it exactly as prescribed and ask
+                  your doctor before changing it.</li>
+              </ul>
+              <p class="refs">Sources for this article: NCCDPHP (2026); WHO (2025). Full APA 7 citations are in the
+                References list below.</p>
+            </div>
+          </article>
+
+          <article class="card art reveal">
+            <div class="img">
+              <img src="diabetes.jpg" alt="A nurse checking an older man’s blood sugar with a finger-prick test"
+                style="object-position:50% 40%" loading="lazy">
+            </div>
+            <h3>Diabetes Awareness for Older Adults</h3>
+            <p>Diabetes is a chronic condition in which the body cannot properly use insulin. Type 2 diabetes is linked
+              to genetics and lifestyle factors such as being overweight or inactive (WHO, 2026), and it can be managed.</p>
+            <button class="btn rm" type="button" aria-expanded="false">Read More</button>
+            <div class="meter" aria-hidden="true"><i></i></div>
+            <div class="full">
+              <button class="btn light listen" type="button">
+                <svg class="ic" aria-hidden="true">
+                  <use href="#i-speaker" />
+                </svg> Listen
+              </button>
+              <h4>Common risk factors</h4>
+              <ul>
+                <li>Being overweight or not getting enough exercise (WHO, 2026; NCCDPHP, 2024)</li>
+                <li>Having a parent, brother or sister with type 2 diabetes (NCCDPHP, 2024)</li>
+                <li>Being 45 or older (NCCDPHP, 2024)</li>
+                <li>Having prediabetes (NCCDPHP, 2024)</li>
+              </ul>
+              <h4>Watch for symptoms</h4>
+              <ul>
+                <li>Feeling very thirsty and needing to urinate more often than usual (WHO, 2026).</li>
+                <li>In type 2 diabetes, symptoms often develop over several years and may go unnoticed, so a simple
+                  blood test is how to find out (WHO, 2026; NCCDPHP, 2024).</li>
+              </ul>
+              <h4>Healthy habits and care</h4>
+              <ul>
+                <li>Management generally includes healthy eating and regular physical activity (WHO, 2026).</li>
+                <li>Some people also need insulin or other medicines, and still need to eat healthy and stay active
+                  (NCCDPHP, 2024).</li>
+                <li>Type 2 diabetes can be prevented or delayed with lifestyle changes such as healthy eating, regular
+                  activity and losing weight if overweight (NCCDPHP, 2024).</li>
+                <li>Ask your doctor how often to check your blood sugar and what your target levels should be (NCCDPHP,
+                  2024).</li>
+              </ul>
+              <p class="refs">Sources for this article: NCCDPHP (2024); WHO (2026). Full APA 7 citations are in
+                the References list below.</p>
+            </div>
+          </article>
+
+          <article class="card art reveal">
+            <div class="img">
+              <img src="/eating healthy.jpg"
+                alt="A nurse bringing a healthy breakfast tray to an older man resting in bed"
+                style="object-position:50% 35%" loading="lazy">
+            </div>
+            <h3>Healthy Eating for Senior Citizens</h3>
+            <p>Diet plays a critical role in health and well-being, and unhealthy diets are a major risk factor for
+              disease and disability (WHO, 2026).</p>
+            <button class="btn rm" type="button" aria-expanded="false">Read More</button>
+            <div class="meter" aria-hidden="true"><i></i></div>
+            <div class="full">
+              <button class="btn light listen" type="button">
+                <svg class="ic" aria-hidden="true">
+                  <use href="#i-speaker" />
+                </svg> Listen
+              </button>
+              <h4>Balanced meals</h4>
+              <ul>
+                <li>A healthy diet rests on four principles: adequacy, balance, moderation and diversity (WHO, 2026).
+                </li>
+                <li>A variety of minimally processed foods low in unhealthy fats, free sugars and sodium is the
+                  foundation (WHO, 2026).</li>
+                <li>In the Philippines, the Department of Science and Technology’s Food and Nutrition Research
+                  Institute released a Pinggang Pinoy plate guide made for older adults in 2023 (Castañeda, 2024).</li>
+              </ul>
+              <h4>Smart choices</h4>
+              <ul>
+                <li>Industrially produced trans fats are not part of a healthy diet and should be avoided (WHO, 2026).
+                </li>
+                <li>Choose water over sugary drinks and limit salt and sugar (WHO, 2026).</li>
+              </ul>
+              <h4>Your own needs</h4>
+              <ul>
+                <li>If you have heart, kidney or chewing problems, ask your doctor or a dietitian which foods and fluids
+                  are best for you.</li>
+              </ul>
+              <p class="refs">Sources for this article: Castañeda (2024); WHO (2026). Full APA 7 citations are in the
+                References list below.</p>
+            </div>
+          </article>
+
+          <article class="card art reveal">
+            <div class="img">
+              <img src="/mental health.jpg"
+                alt="A caregiver sitting beside an older man and talking with him in a bright living room"
+                style="object-position:50% 36%" loading="lazy">
+            </div>
+            <h3>Maintaining Mental Health as We Age</h3>
+            <p>Emotional wellness is as important as physical health. Loneliness and social isolation are key risk
+              factors for mental health conditions in later life (WHO, 2025).</p>
+            <button class="btn rm" type="button" aria-expanded="false">Read More</button>
+            <div class="meter" aria-hidden="true"><i></i></div>
+            <div class="full">
+              <button class="btn light listen" type="button">
+                <svg class="ic" aria-hidden="true">
+                  <use href="#i-speaker" />
+                </svg> Listen
+              </button>
+              <h4>Stay connected</h4>
+              <ul>
+                <li>Loneliness and social isolation are key risk factors for mental health conditions in later life
+                  (WHO, 2025).</li>
+                <li>Call or visit family and friends, join community or faith groups, or volunteer.</li>
+              </ul>
+              <h4>Know the common conditions</h4>
+              <ul>
+                <li>Depression and anxiety are the most common mental health conditions in older adults (WHO, 2025).
+                </li>
+                <li>Life changes such as serious illness or losing a loved one can bring grief, isolation or loneliness.
+                  When these feelings persist, they can lead to depression and anxiety (National Institute of Mental
+                  Health [NIMH], 2024).</li>
+                <li>Warning signs include changes in mood, energy or appetite, trouble sleeping, increased worry, and
+                  sadness or hopelessness (NIMH, 2024).</li>
+                <li>About 14% of adults aged 70 and over live with a mental disorder (WHO, 2025).</li>
+                <li>Ageism can seriously affect mental health (WHO, 2025).</li>
+              </ul>
+              <h4>When to seek support</h4>
+              <ul>
+                <li>Prompt recognition and treatment of mental health conditions in older adults is essential (WHO,
+                  2025).</li>
+                <li>Mental disorders can be treated, and a primary care provider is a good place to start (NIMH, 2024).
+                </li>
+                <li>Talk to a doctor if sadness, worry or sleep problems last for several weeks or you lose interest in
+                  daily life.</li>
+                <li>Thoughts of harming yourself: contact emergency services or a crisis line immediately.</li>
+              </ul>
+              <p class="refs">Sources for this article: NIMH (2024); WHO (2025). Full APA 7 citations are in the
+                References list below.</p>
+            </div>
+          </article>
+
+          <article class="card art reveal">
+            <div class="img">
+              <img src="/active lifestyle.jpg" alt="A group of older adults jogging together outdoors"
+                style="object-position:50% 40%" loading="lazy">
+            </div>
+            <h3>Staying Active and Preventing Falls</h3>
+            <p>Safe movement keeps muscles, bones and balance strong. Adults over 60 suffer the greatest number of fatal
+              falls worldwide (WHO, 2021).</p>
+            <button class="btn rm" type="button" aria-expanded="false">Read More</button>
+            <div class="meter" aria-hidden="true"><i></i></div>
+            <div class="full">
+              <button class="btn light listen" type="button">
+                <svg class="ic" aria-hidden="true">
+                  <use href="#i-speaker" />
+                </svg> Listen
+              </button>
+              <h4>Why it matters</h4>
+              <ul>
+                <li>Falls are the second leading cause of unintentional injury deaths worldwide (WHO, 2021).</li>
+                <li>More than one out of four older people falls each year, but fewer than half tell their doctor.
+                  Falling once doubles the chance of falling again (National Center for Injury Prevention and Control
+                  [NCIPC], 2026).</li>
+                <li>Unsafe environments are a risk, particularly for people with poor balance and limited vision (WHO,
+                  2021).</li>
+              </ul>
+              <h4>Safe activity</h4>
+              <ul>
+                <li>Older adults should do varied activity that emphasizes balance and strength on 3 or more days a week
+                  (WHO, 2024).</li>
+                <li>Adults are advised to get 150–300 minutes of moderate aerobic activity weekly, or as much as their
+                  health allows (WHO, 2024).</li>
+                <li>Ask your doctor before starting.</li>
+              </ul>
+              <h4>Make your home safer</h4>
+              <ul>
+                <li>Creating safer environments is a key part of preventing falls (WHO, 2021).</li>
+                <li>Known fall risk factors include lower body weakness, difficulty with walking and balance, vision
+                  problems, foot pain or poor footwear, and home hazards such as broken steps, throw rugs and clutter
+                  (NCIPC, 2026).</li>
+                <li>Some medicines, including some over-the-counter ones, can affect balance. Ask your doctor or
+                  pharmacist (NCIPC, 2026).</li>
+                <li>Examples of changes: remove loose rugs and clutter, add grab bars and good lighting, and wear
+                  non-slip shoes.</li>
+                <li>If you are vitamin D deficient, supplements can help prevent falls (WHO, 2021). Ask your doctor.
+                </li>
+              </ul>
+              <p class="refs">Sources for this article: NCIPC (2026); WHO (2021, 2024). Full APA 7 citations are in the
+                References list below.</p>
+            </div>
+          </article>
+        </div>
+
+        <aside class="card" id="references" aria-labelledby="refs-title" style="margin-top:var(--s4)">
+          <h3 id="refs-title">References</h3>
+          <ul class="reflist">
+            <li>Castañeda, J. (2024, October 27). <em>No lolo and lola left behind: Efforts underway for senior health and welfare</em>. Philstar.com. <a
+                href="https://philstar.com/health-and-family/2024/10/27/2395646/no-lolo-and-lola-left-behind-efforts-underway-senior-health-and-welfare"
+                target="_blank"
+                rel="noopener">https://philstar.com/health-and-family/2024/10/27/2395646/no-lolo-and-lola-left-behind-efforts-underway-senior-health-and-welfare</a></li>
+            <li>Expanded Senior Citizens Act of 2010, Republic Act No. 9994 (2010). <a
+                href="https://lawphil.net/statutes/repacts/ra2010/ra_9994_2010.html" target="_blank"
+                rel="noopener">https://lawphil.net/statutes/repacts/ra2010/ra_9994_2010.html</a></li>
+            <li>Health Resources and Services Administration. (2024, August 22). <em>What are telehealth considerations
+                for older adults?</em> Telehealth.HHS.gov. Retrieved November 16, 2026, from <a
+                href="https://telehealth.hhs.gov/patients/what-are-telehealth-considerations-older-adults"
+                target="_blank"
+                rel="noopener">https://telehealth.hhs.gov/patients/what-are-telehealth-considerations-older-adults</a>
+            </li>
+            <li>Health Resources and Services Administration. (2025, July 29). <em>What should I know before my
+                telehealth visit?</em> Telehealth.HHS.gov. Retrieved November 16, 2026, from <a
+                href="https://telehealth.hhs.gov/patients/what-should-i-know-before-my-telehealth-visit" target="_blank"
+                rel="noopener">https://telehealth.hhs.gov/patients/what-should-i-know-before-my-telehealth-visit</a>
+            </li>
+            <li>National Center for Chronic Disease Prevention and Health Promotion. (2024, May 15). <em>Type 2
+                diabetes</em>. Centers for Disease Control and Prevention. Retrieved November 12, 2026, from <a
+                href="https://www.cdc.gov/diabetes/about/about-type-2-diabetes.html" target="_blank"
+                rel="noopener">https://www.cdc.gov/diabetes/about/about-type-2-diabetes.html</a></li>
+            <li>National Center for Chronic Disease Prevention and Health Promotion. (2026, October 13). <em>About high
+                blood pressure</em>. Centers for Disease Control and Prevention. Retrieved November 12, 2026, from <a
+                href="https://www.cdc.gov/high-blood-pressure/about/index.html" target="_blank"
+                rel="noopener">https://www.cdc.gov/high-blood-pressure/about/index.html</a></li>
+            <li>National Center for Injury Prevention and Control. (2026, September 8). <em>Facts about older adult
+                falls</em>. Centers for Disease Control and Prevention. Retrieved November 12, 2026, from <a
+                href="https://www.cdc.gov/falls/data-research/facts-stats/index.html" target="_blank"
+                rel="noopener">https://www.cdc.gov/falls/data-research/facts-stats/index.html</a></li>
+            <li>National Institute of Mental Health. (2024, April). <em>Older adults and mental health</em>. National
+              Institutes of Health, U.S. Department of Health and Human Services. Retrieved November 12, 2026, from <a
+                href="https://www.nimh.nih.gov/health/topics/older-adults-and-mental-health" target="_blank"
+                rel="noopener">https://www.nimh.nih.gov/health/topics/older-adults-and-mental-health</a></li>
+            <li>National Institute on Aging. (2022, September 22). <em>Taking medicines safely as you age</em>. National
+              Institutes of Health, U.S. Department of Health and Human Services. Retrieved November 16, 2026, from <a
+                href="https://www.nia.nih.gov/health/medicines-and-medication-management/taking-medicines-safely-you-age"
+                target="_blank"
+                rel="noopener">https://www.nia.nih.gov/health/medicines-and-medication-management/taking-medicines-safely-you-age</a>
+            </li>
+            <li>World Health Organization. (2021, April 26). <em>Falls</em> [Fact sheet]. Retrieved November 12, 2026,
+              from <a href="https://www.who.int/news-room/fact-sheets/detail/falls" target="_blank"
+                rel="noopener">https://www.who.int/news-room/fact-sheets/detail/falls</a></li>
+            <li>World Health Organization. (2026, November 11). <em>Diabetes</em> [Fact sheet]. Retrieved November 12,
+              2026, from <a href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank"
+                rel="noopener">https://www.who.int/news-room/fact-sheets/detail/diabetes</a></li>
+            <li>World Health Organization. (2024, June 26). <em>Physical activity</em> [Fact sheet]. Retrieved November
+              12, 2026, from <a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity"
+                target="_blank" rel="noopener">https://www.who.int/news-room/fact-sheets/detail/physical-activity</a>
+            </li>
+            <li>World Health Organization. (2025, September 25). <em>Hypertension</em> [Fact sheet]. Retrieved November
+              12, 2026, from <a href="https://www.who.int/news-room/fact-sheets/detail/hypertension" target="_blank"
+                rel="noopener">https://www.who.int/news-room/fact-sheets/detail/hypertension</a></li>
+            <li>World Health Organization. (2025, October 8). <em>Mental health of older adults</em> [Fact sheet].
+              Retrieved November 12, 2026, from <a
+                href="https://www.who.int/news-room/fact-sheets/detail/mental-health-of-older-adults" target="_blank"
+                rel="noopener">https://www.who.int/news-room/fact-sheets/detail/mental-health-of-older-adults</a></li>
+            <li>World Health Organization. (2025, September 28). <em>Stronger systems for healthy hearts in the
+                Philippines</em> [Feature story]. <a
+                href="https://www.who.int/westernpacific/newsroom/feature-stories/item/stronger-systems-for-healthy-hearts-in-the-philippines"
+                target="_blank"
+                rel="noopener">https://www.who.int/westernpacific/newsroom/feature-stories/item/stronger-systems-for-healthy-hearts-in-the-philippines</a>
+            </li>
+            <li>World Health Organization. (2026, January 26). <em>Healthy diet</em> [Fact sheet]. Retrieved November
+              12, 2026, from <a href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank"
+                rel="noopener">https://www.who.int/news-room/fact-sheets/detail/healthy-diet</a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="alt" id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <span class="eyebrow">Questions</span>
+          <h2 id="faq-title">Frequently Asked Questions</h2>
+        </header>
+
+        <div class="faq">
+          <details>
+            <summary>Do I need a computer to use telehealth?</summary>
+            <p>No. A smartphone or tablet with a camera and internet connection is usually enough. A family member or
+              caregiver can help you set it up the first time.</p>
+          </details>
+          <details>
+            <summary>Can this website diagnose my illness?</summary>
+            <p>No. This website gives general health information only. It does not replace a licensed healthcare
+              professional. Please talk to a doctor about your own health.</p>
+          </details>
+          <details>
+            <summary>What should I prepare before an online consultation?</summary>
+            <p>Find a quiet, well-lit place, check your device and internet connection, and keep your medicine list and
+              written questions ready.</p>
+          </details>
+          <details>
+            <summary>How do I make the text bigger?</summary>
+            <p>Use the A+ button at the top of the page. You can also switch on dark mode or high contrast. The site
+              remembers your choices.</p>
+          </details>
+          <details>
+            <summary>Is my information stored when I use the contact form?</summary>
+            <p>Your information is handled securely and will only be used to respond to your inquiries or concerns
+               It will not be shared with unauthorized individuals or used for purposes other than those stated.</p>
+          </details>
+          <details>
+            <summary>What should I do in an emergency?</summary>
+            <p>Do not wait for an online reply. In the Philippines, dial 911 or go to the nearest hospital immediately.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <span class="eyebrow">Contact</span>
+          <h2 id="contact-title">Contact Us and Help Hotline</h2>
+        </header>
+
+        <div class="notice emerg" role="alert">
+          <svg class="ic" aria-hidden="true">
+            <use href="#i-alert" />
+          </svg>
+          <span>Emergency? Do not wait for an online reply. Call your local emergency services (in the Philippines, dial
+            911) or go to the nearest hospital immediately.</span>
+        </div>
+
+        <div class="two">
+          <article class="card contact-list">
+            <h3>Get in Touch</h3>
+            <p><svg class="ic" aria-hidden="true">
+                <use href="#i-phone" />
+              </svg><span>Hotline: <strong>+63 000 123 4567</strong></span></p>
+            <p><svg class="ic" aria-hidden="true">
+                <use href="#i-mail" />
+              </svg><span>Email: <strong>agapay.telehealth@gmail.com</strong></span></p>
+            <p><svg class="ic" aria-hidden="true">
+                <use href="#i-pin" />
+              </svg><span>Address: <strong>Office Address, City, Philippines</strong></span></p>
+          </article>
+
+          <article class="card">
+            <h3>Help and Support</h3>
+            <ul class="checks">
+              <li><svg class="ic" aria-hidden="true">
+                  <use href="#i-check" />
+                </svg><span>Need help using this website? Ask a family member or caregiver to sit with you.</span></li>
+              <li><svg class="ic" aria-hidden="true">
+                  <use href="#i-check" />
+                </svg><span>Use the A+ button for bigger text.</span></li>
+              <li><svg class="ic" aria-hidden="true">
+                  <use href="#i-check" />
+                </svg><span>Write down your questions before a doctor’s visit.</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <form id="cform" novalidate aria-label="Contact form">
+          <h3>Send Us a Message</h3>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" autocomplete="name" required>
+            <div class="err" id="nameErr"></div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" autocomplete="email" required>
+            <div class="err" id="emailErr"></div>
+          </div>
+
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input id="subject" required>
+            <div class="err" id="subjectErr"></div>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" required></textarea>
+            <div class="err" id="messageErr"></div>
+          </div>
+
+          <button class="btn" type="submit">Send Message</button>
+          <div id="formMsg" role="status"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="alt" id="privacy" aria-labelledby="privacy-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <span class="eyebrow">Privacy</span>
+          <h2 id="privacy-title">Privacy Notice</h2>
+        </header>
+
+
+        <div class="grid">
+          <article class="card">
+            <h3>What we may collect</h3>
+            <p>In a real service: your name, email and the message you write in the contact form. This demo collects
+              nothing.</p>
+          </article>
+          <article class="card">
+            <h3>How it is handled</h3>
+            <p>Information would be used only to reply to your question and would not be sold or shared without your
+              permission.</p>
+          </article>
+          <article class="card">
+            <h3>How it is protected</h3>
+            <p>A real service would use secure connections, limited staff access and regular security reviews.</p>
+          </article>
+          <article class="card">
+            <h3>Your safety</h3>
+            <p>Do not share personal health details by ordinary email, social media or text. Give personal information
+              only through properly secured and authorized healthcare services.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="emerg-strip">
+    Emergency? Dial <a href="tel:911">911</a> or go to the nearest hospital.
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="fcols">
+        <div>
+          <a class="logo" href="#home" style="margin-bottom:10px">
+            <span class="logo-mark"><img src="logo.png" alt="" width="40" height="40"></span>
+            <span>Agapay Telehealth</span>
+          </a>
+          <p>Clear, trustworthy health information for older adults and their families.</p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <a href="#about">About Us</a>
+          <a href="#services">Health Services</a>
+          <a href="#education">Health Education</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <div>
+          <h3>Help</h3>
+          <a href="#contact">Contact Us</a>
+          <a href="#privacy">Privacy Notice</a>
+          <a href="#references">References</a>
+        </div>
+      </div>
+
+      <p class="copy">© <span id="year">2026</span> Agapay Telehealth.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Quick Navigation Bar -->
+  <nav class="bottombar" aria-label="Quick navigation">
+    <a href="#home"><svg class="ic" aria-hidden="true">
+        <use href="#i-home" />
+      </svg>Home</a>
+    <a href="#services"><svg class="ic" aria-hidden="true">
+        <use href="#i-clipboard" />
+      </svg>Services</a>
+    <a href="#education"><svg class="ic" aria-hidden="true">
+        <use href="#i-book" />
+      </svg>Learn</a>
+    <a href="#contact"><svg class="ic" aria-hidden="true">
+        <use href="#i-phone" />
+      </svg>Call</a>
+  </nav>
+
+  <button id="top" type="button" aria-label="Back to top">
+    <svg class="ic" aria-hidden="true">
+      <use href="#i-up" />
+    </svg> Top
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
